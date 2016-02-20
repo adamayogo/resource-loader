@@ -31,6 +31,9 @@ module.exports = function () {
                         next();
                     };
                 }
+                else {
+                    next();
+                }
             }
             // if content type says this is an image, then we should transform the blob into an Image object
             else if (resource.data.type.indexOf('image') === 0) {
@@ -49,6 +52,9 @@ module.exports = function () {
 
                     next();
                 };
+            }
+            else {
+                next();
             }
         }
         else {
